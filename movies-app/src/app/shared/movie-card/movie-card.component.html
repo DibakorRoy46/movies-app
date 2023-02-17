@@ -1,0 +1,18 @@
+<ng-container  *ngIf="item">
+  <a class="rounded-md block bg-slate-800  movie-card" href="">
+    <div class="absolute flex items-center rounded-md bg-slate-600 px-3 py-1 mt-5 ml-4">
+      <span class="app-icons text-yellow-400">star</span>
+      <span class="rating-value text-w">{{item.vote_average}}</span><span>/10</span>
+    </div>
+    <div>
+      <img class="w-full rounded-md h-[275px] object-cover"
+        [src]="imageSizes.medium+ item.poster_path" alt="">
+    </div>
+    <div class="absolute   rounded-md bg-slate-600 px-3 py-1 mt-[-3rem] ml-3 ">
+      <h2 class="text-xl">{{item.release_date | date:'yyyy'}}</h2>
+    </div>
+    <div class="">
+      <span class="text-base flex items-center text-center justify-center "> {{item.original_title}}</span>
+    </div>
+  </a>
+</ng-container>

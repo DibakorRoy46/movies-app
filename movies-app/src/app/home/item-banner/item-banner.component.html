@@ -1,0 +1,11 @@
+<div class="w-full p-3">
+  <div class="flex">
+    <h1 class="px-6"><ng-content></ng-content></h1>
+    <a class="text-pink-500 pt-8" routerLink="/">Explore Now</a>
+  </div>
+  <div class="grid grid-cols-6 gap-1 m-4" >
+    <ng-container *ngFor="let item of items" >
+      <app-movie-card [item]="item"></app-movie-card>
+    </ng-container>
+  </div>
+</div>
