@@ -1,0 +1,16 @@
+<ng-container *ngIf="movie">
+  <app-simple-banner [movie]="movie"></app-simple-banner>
+
+  <p-tabView >
+    <p-tabPanel header="OVERVIEW">
+      <app-item-overview [movie]="movie"></app-item-overview>
+    </p-tabPanel>
+    <p-tabPanel header="VIDEOS">
+      <app-item-videos [item]="movieVideo"></app-item-videos>
+    </p-tabPanel>
+    <p-tabPanel header="PHOTOS">
+      Content 3
+    </p-tabPanel>
+  </p-tabView>
+
+</ng-container>

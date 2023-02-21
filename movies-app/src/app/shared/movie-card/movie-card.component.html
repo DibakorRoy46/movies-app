@@ -1,5 +1,5 @@
 <ng-container  *ngIf="item">
-  <a class="rounded-md block bg-slate-800  movie-card" href="">
+  <a class="rounded-md block bg-slate-800  movie-card" routerLink="/movies/{{item.id}}">
     <div class="absolute flex items-center rounded-md bg-slate-600 px-3 py-1 mt-5 ml-4">
       <span class="app-icons text-yellow-400">star</span>
       <span class="rating-value text-w">{{item.vote_average}}</span><span>/10</span>

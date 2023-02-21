@@ -1,0 +1,27 @@
+<div class="grid grid-cols-4 gap-3">
+  <ng-container *ngFor="let movie of item">
+    <div class="flex items-center justify-center">
+      <img [src]="'https://img.youtube.com/vi/'+movie.key+'/mqdefault.jpg'" alt="">
+      <div class="absolute  cursor-pointer" (click)="showDialog(movie.key)">
+        <svg _ngcontent-shl-c15="" height="48" viewBox="0 0 55 55" width="48" xmlns="http://www.w3.org/2000/svg">
+          <circle _ngcontent-shl-c15="" cx="27.5" cy="27.5" fill="none" r="26.75" stroke="#fff" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="1.5">
+          </circle>
+          <path _ngcontent-shl-c15="" d="M20.97 40.81L40.64 27.5 20.97 14.19v26.62z" fill="none" stroke="#fff"
+            stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+          </path>
+        </svg>
+      </div>
+    </div>
+  </ng-container>
+</div>
+<p-dialog [showHeader]="false" [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [closable]="true"
+    [(visible)]="display" styleClass="bg-slate-100" [blockScroll]="true" [style]="{width: '70%',height:'70%'}"
+    [transitionOptions]="'350ms'">
+    <span class="app-icons text-pink-600 absolute right-0 cursor-pointer" (click)="closeDiolog()">close</span>
+    <div *ngIf="videoKey" class="h-full w-full bg-slate-600">
+      <iframe [src]="getSafeUrl('https://www.youtube-nocookie.com/embed/'+videoKey+'?autoplay=1')" frameborder="0" width="100%" height="100%"
+        allow="accelerometer;autoplay;encrypted-media" allowfullscreen>
+      </iframe>
+    </div>
+  </p-dialog>

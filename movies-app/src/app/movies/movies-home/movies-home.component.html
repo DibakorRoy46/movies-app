@@ -1,1 +1,13 @@
-<p>movies-home works!</p>
+<div class="w-full p-3">
+  <div class="flex">
+    <h1 class="px-6"><ng-content></ng-content></h1>
+  </div>
+  <div class="grid grid-cols-5 gap-2 m-4" >
+    <ng-container *ngFor="let item of items" >
+      <app-movie-card [item]="item"></app-movie-card>
+    </ng-container>
+  </div>
+  <div>
+    <p-paginator [rows]="10" [totalRecords]="5000" (onPageChange)="paginate($event)"></p-paginator>
+  </div>
+</div>
